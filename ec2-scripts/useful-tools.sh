@@ -5,11 +5,12 @@ sudo yum update -y
 
 #installs docker
 sudo yum install -y docker 
-sudo usermod -aG docker $USER
 
 #ensures docker starts on boot everytime
+sudo systemctl start docker
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
+sudo usermod -aG docker $USER
 
 #installs git
 sudo yum install git -y
